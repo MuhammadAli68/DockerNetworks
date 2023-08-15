@@ -22,6 +22,7 @@ Output:
 C:\Users\M.Ali>docker run -d --name nginx_container --network my_network -p 8080:80 nginx
 5497e9a5f152eb30371901e9d2fe825be69a14da078b4f86cdb68265f1b1acb5
 </code>
+
 Logs:
 <code>
 2023-08-15 15:45:08 /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
@@ -56,6 +57,7 @@ Logs:
 Step 3: Open the link http://localhost:8080 to verify if the default page of nginx is accessible
 
 Output:
+![nginx_continer_1](https://github.com/MuhammadAli68/DockerNetworks/assets/57432644/5310ad64-d8e6-4cdd-8db2-bb815d3bb485)
 
 
 Step 4: Create another container for httpd mapped on port 80 and add it to "my_network"
@@ -81,6 +83,7 @@ f3e3a691bbb836cc0ddf5354c02b5afcf48c5a70efff494d38339e4fc2c59828
 Step 5: Open the link http://localhost:8081 to verify if the default page of httpd is accessible
 
 Output:
+![httpd_container](https://github.com/MuhammadAli68/DockerNetworks/assets/57432644/dfc5be20-0826-4fc0-865a-94c0102b9dbb)
 
 Logs:
 <code>
@@ -175,8 +178,10 @@ d3f87601d956f757f054d1d6fa91f61490c175eeadff8a52940150ec906909ad
 Step 9: Open the link http://localhost:8082 to verify if the default page of nginx is accessible
  
 Output:
+![image](https://github.com/MuhammadAli68/DockerNetworks/assets/57432644/72e55d95-daf5-4b48-bfb1-7140a8dc3261)
 
 Logs:
+<code>
 2023-08-15 16:42:56 /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
 2023-08-15 16:42:56 /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
 2023-08-15 16:42:56 /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
@@ -203,6 +208,7 @@ Logs:
 2023-08-15 16:47:33 2023/08/15 20:47:33 [error] 29#29: *1 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8082", referrer: "http://localhost:8082/"
 2023-08-15 16:47:33 172.18.0.1 - - [15/Aug/2023:20:47:33 +0000] "GET / HTTP/1.1" 200 615 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36" "-"
 2023-08-15 16:47:33 172.18.0.1 - - [15/Aug/2023:20:47:33 +0000] "GET /favicon.ico HTTP/1.1" 404 555 "http://localhost:8082/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36" "-"
+</code>
 
 Step 10: Diplay running containers
 <code>
